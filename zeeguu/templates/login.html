@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% set tab = "learning_center" %}
+
+{% block body %}
+  <h2>Learning Center</h2>
+  <form id="login" class="form-horizontal" action="" method="post">
+      <fieldset>
+          <div class="control-group">
+            <div class="controls">
+              <div class="input-prepend">
+                  <span class="add-on"><i class="icon-envelope"></i></span>
+                  <input type="email" name="email" id="email" placeholder="Email address" class="input-xlarge" rel="popover" data-content="Don't worry, we will never send you any emails." data-trigger="manual" />
+              </div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="controls">
+              <div class="input-prepend">
+                  <span class="add-on"><i class="icon-lock"></i></span>
+                  <input id="password" name="password" type="password" placeholder="Password" class="input-xlarge" />
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-error hide" id="login-error">
+            I'm afraid that wasn't correct.
+          </div>
+          
+          <div class="alert alert-error hide" id="register-error">
+            This email address is already in use, maybe try the login button instead.
+          </div>
+
+          <div class="control-group">
+            <div class="controls">
+              <input type="submit" name="login" value="Login" class="btn btn-success" />
+              <input type="submit" name="register" value="Create Account" class="btn btn-danger" />
+            </div>
+          </div>
+      </fieldset>
+  </form>
+{% endblock %}

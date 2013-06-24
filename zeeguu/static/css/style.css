@@ -1,0 +1,15 @@
+h1 img {
+    height: 40px;
+}
+
+#login {
+   margin-top: 20px;
+}
+
+#login .controls {
+    margin-left: 0;
+}
+
+#login .help-inline {
+    font-size: 14px;
+}

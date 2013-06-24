@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% set tab = "learning_center" %}
+
+{% block body %}
+    <h2>Learning Center</h2>
+    {% if searches %}
+        <p>These are the last {{ searches | length }} words you looked up.</p>
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>Source language</th>
+                <th>Target language</th>
+                <th>Word</th>
+                <th>Contribution</th>
+            </tr>
+            {% for search in searches %}
+            <tr>
+                <td>{{ search.word.language.name }}</td>
+                <td>{{ search.language.name }}</td>
+                <td>{{ search.word.word.replace("+", " ") }}</td>
+                <td>{{ search.word.translations[0].word.replace("+", " ") if search.word.translations else "" }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>You didn't look up any words yet. Install our <a href="#" id="install-extension">Chrome extensions</a> to get started.</p>
+    {% endif %}
+{% endblock %}

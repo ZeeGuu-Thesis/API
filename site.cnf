@@ -1,0 +1,16 @@
+Listen 80
+NameVirtualHost *:80
+                                                                      
+<VirtualHost *:80>
+    ServerName sla.unibe.ch
+
+    WSGIDaemonProcess zeeguu user=simon group=simon threads=5
+    WSGIScriptAlias / /home/simon/zeeguu/zeeguuapi/zeeguu.wsgi
+
+    <Directory /home/simon/zeeguu/zeeguuapi>
+        WSGIProcessGroup zeeguu
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>

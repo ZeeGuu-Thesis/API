@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Zee Guu</title>
+        {% assets filters="cssmin", output="instance/style.css", "css/bootstrap.css", "css/font-awesome.css", "css/style.css" -%}
+            <link rel="stylesheet" href="{{ ASSET_URL }}" />
+        {% endassets -%}
+        {% assets filters="jsmin", output="instance/script.js", "js/jquery.js", "js/jquery.validate.js", "js/bootstrap.js", "js/sla.js" -%}
+            <script src="{{ ASSET_URL }}"></script>
+        {% endassets -%}
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/gpjhcjdagajdcbbgincocgfagndileai">
+    </head>
+    <body>
+        <div class="container">
+            <h1><img src="/static/img/logo.png" alt="ZeeGuu" height="90" /></h1>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+                      <li{% if not tab %} class="active"{% endif %}><a href="{{ url_for('home') }}">Browser Extension</a></li>
+                      <li{% if tab == "learning_center" %} class="active"{% endif %}><a href="{{ url_for('learning_center') }}">Learning Center</a></li>
+                    </ul>
+                    {% if g.user %}
+                        <ul class="nav pull-right">
+                          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

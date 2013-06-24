@@ -1,0 +1,9 @@
+instance
+
+*.pyc
+*.egg-info
+
+*~
+*.orig
+
+.DS_Store
