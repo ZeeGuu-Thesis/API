@@ -1,2 +1,2 @@
-recursive-include zeeguu/stats/static *
-recursive-include zeeguu/stats/templates *
+recursive-include zeeguu/static *
+recursive-include zeeguu/templates *
