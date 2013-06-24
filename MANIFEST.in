@@ -1,2 +1,2 @@
-recursive-include mcquery/stats/static *
-recursive-include mcquery/stats/templates *
+recursive-include zeeguu/stats/static *
+recursive-include zeeguu/stats/templates *
