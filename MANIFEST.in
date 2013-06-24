@@ -1,0 +1,2 @@
+recursive-include mcquery/stats/static *
+recursive-include mcquery/stats/templates *
