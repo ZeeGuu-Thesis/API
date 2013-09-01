@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 
-{% set tab = "learning_center" %}
+{% set tab = "gym" %}
 
 {% block body %}
-    <h2>Learning Center</h2>
+    <h2>Lookup History</h2>
     {% if searches %}
         <p>These are the last {{ searches | length }} words you looked up.</p>
         <table class="table table-striped table-bordered">
@@ -17,8 +17,8 @@
             <tr>
                 <td>{{ search.word.language.name }}</td>
                 <td>{{ search.language.name }}</td>
-                <td>{{ search.word.word.replace("+", " ") }}</td>
-                <td>{{ search.word.translations[0].word.replace("+", " ") if search.word.translations else "" }}</td>
+                <td>{{ search.word.word }}</td>
+                <td>{{ search.contribution.translation.word if search.contribution else "" }}</td>
             </tr>
             {% endfor %}
         </table>

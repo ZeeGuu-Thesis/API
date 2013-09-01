@@ -2,10 +2,10 @@
 <html>
     <head>
         <title>Zee Guu</title>
-        {% assets filters="cssmin", output="instance/style.css", "css/bootstrap.css", "css/font-awesome.css", "css/style.css" -%}
+        {% assets filters="cssmin", output="instance/style.css", "css/bootstrap.css", "css/select2.css", "css/font-awesome.css", "css/flippant.css", "css/style.css" -%}
             <link rel="stylesheet" href="{{ ASSET_URL }}" />
         {% endassets -%}
-        {% assets filters="jsmin", output="instance/script.js", "js/jquery.js", "js/jquery.validate.js", "js/bootstrap.js", "js/sla.js" -%}
+        {% assets filters="jsmin", output="instance/script.js", "js/jquery.js", "js/jquery.validate.js", "js/bootstrap.js", "js/flippant.js", "js/select2.js", "js/sla.js" -%}
             <script src="{{ ASSET_URL }}"></script>
         {% endassets -%}
         <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/gpjhcjdagajdcbbgincocgfagndileai">
@@ -16,12 +16,12 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <ul class="nav">
-                      <li{% if not tab %} class="active"{% endif %}><a href="{{ url_for('home') }}">Browser Extension</a></li>
-                      <li{% if tab == "learning_center" %} class="active"{% endif %}><a href="{{ url_for('learning_center') }}">Learning Center</a></li>
+                      <li{% if not tab %} class="active"{% endif %}><a href="{{ url_for('gym.home') }}">Browser Extension</a></li>
+                      <li{% if tab == "gym" %} class="active"{% endif %}><a href="{{ url_for('gym.gym_view') }}">Language Gym</a></li>
                     </ul>
                     {% if g.user %}
                         <ul class="nav pull-right">
-                          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                          <li><a href="{{ url_for('gym.logout') }}">Logout</a></li>
                         </ul>
                     {% endif %}
                 </div>

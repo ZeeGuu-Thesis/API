@@ -51,7 +51,8 @@ if __name__ == "__main__":
     zeeguu.db.create_all()
     de = model.Language("de", "German")
     en = model.Language("en", "English")
-    zeeguu.db.session.add(model.User("user@localhost.com", "password", de))
+    user = model.User("user@localhost.com", "password", de)
+    zeeguu.db.session.add(user)
     zeeguu.db.session.add(en)
-    #populate(de, en, "/Users/simon/Documents/dict.txt")
+
     zeeguu.db.session.commit()

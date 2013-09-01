@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% set tab = "gym" %}
+
+{% block body %}
+    <div id="language-selection">
+        <select id="lang1">
+            {% for language in languages %}
+                <option value="{{ language.id }}">
+                    {{ language.name }}
+                </option>
+            {% endfor %}
+        </select>
+        <a href="#" id="direction"><i class="icon-long-arrow-right"></i></a>
+        <select id="lang2">
+            {% for language in languages %}
+                <option value="{{ language.id }}"{% if not first %} selected{% endif %}>
+                    {{ language.name }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="card" id="question">
+        <span class="loading">Loading...</span>
+    </div>
+    <input id="answer" placeholder="Translation" />
+{% endblock %}

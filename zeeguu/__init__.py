@@ -10,6 +10,7 @@ db = flask.ext.sqlalchemy.SQLAlchemy()
 
 from zeeguu import app
 
+
 app = app.app
 if os.environ.get("ZEEGUU_TESTING"):
     # in case of testing, we don't want to use the real database
